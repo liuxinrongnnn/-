@@ -1,0 +1,39 @@
+#include <stdio.h>
+main()
+{
+	char ch1[500],word[50];
+	int i,j,na=0,nw=0,cnt=0,sum=0;
+	printf("请输入一句英语句子:\n");
+	while((ch1[i]=getchar())!='\n')
+	{
+		na++;
+		i++;
+	}
+	i=0;
+	printf("请输入单词:\n");
+	while((word[i]=getchar())!='\n')
+	{
+		nw++;
+		i++;
+	}
+	for(i=0;i<na;i++)
+	{
+		cnt=0;
+		if(ch1[i]==word[0])
+		{
+			for(j=0;j<nw;j++)
+			{
+				if(ch1[i+j]==word[j])
+				{
+					cnt++;
+				}
+			}
+			if(cnt==nw)
+			{
+				sum++;
+			}
+		}
+	}
+	printf("单词的个数为:%d\n",sum);
+	return 0;
+}
